@@ -164,9 +164,9 @@ devices = \
         'dtb': '',
         'config': 'p212_defconfig'
       },
-      'bananapi-cm4io': {
-        'dtb': 'meson-g12b-bananapi-cm4-cm4io.dtb',
-        'config': 'bananapi-cm4io_defconfig'
+      'alta': {
+        'dtb': 'meson-g12b-a311d-libretech-cc.dtb',
+        'config': 'aml-a311d-cc_defconfig'
       },
       'bananapi-m2s': {
         'dtb': 'meson-g12b-a311d-bananapi-m2s.dtb',
@@ -231,6 +231,10 @@ devices = \
       'radxa-zero2': {
         'dtb': 'meson-g12b-radxa-zero2.dtb',
         'config': 'radxa-zero2_defconfig'
+      },
+      'solitude': {
+        'dtb': 'meson-sm1-s905d3-libretech-cc.dtb',
+        'config': 'aml-s905d3-cc_defconfig'
       },
       'wetek-core2': {
         'dtb': 'meson-gxm-wetek-core2.dtb',
@@ -343,7 +347,7 @@ devices = \
       'rock-4c-plus': {
         'dtb': 'rk3399-rock-4c-plus.dtb',
         'config': 'rock-4c-plus-rk3399_defconfig'
-      },      
+      },
       'rock-pi-n10': {
         'dtb': 'rk3399pro-rock-pi-n10.dtb',
         'config': 'rock-pi-n10-rk3399pro_defconfig'
