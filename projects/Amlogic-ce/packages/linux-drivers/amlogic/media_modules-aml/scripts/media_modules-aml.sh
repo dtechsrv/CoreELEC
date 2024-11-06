@@ -11,6 +11,7 @@ modprobe -q amvdec_h264
 modprobe -q amvdec_h264mvc
 modprobe -q amvdec_mh264
 modprobe -q amvdec_h265
+modprobe -q amvdec_h266
 modprobe -q amvdec_mjpeg
 modprobe -q amvdec_mmjpeg
 modprobe -q amvdec_mpeg12

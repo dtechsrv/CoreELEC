@@ -4,12 +4,12 @@
 # Copyright (C) 2024-present Team CoreELEC (https://coreelec.org)
 
 PKG_NAME="linux"
-PKG_VERSION="eb19ead5a86a75d9ad02aac9bfe1299881fdaa09"
-PKG_SHA256="e890036b68da458355b7d47bac7da48ac7b7106d704eeedab37e8c2830e4d8d8"
+PKG_VERSION="15458e17d55f59efcae3923badee41551be27ba1"
+PKG_SHA256="15bee53fa0fe3086e0edad7da51ed0691ef88a46f62ffd581cf26893efa76beb"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kernel.org"
 PKG_URL="https://github.com/CoreELEC/linux-amlogic/archive/${PKG_VERSION}.tar.gz"
-PKG_GIT_BRANCH="amlogic-5.15.119"
+PKG_GIT_BRANCH="amlogic-5.15.137"
 PKG_BUILD_PERF="no"
 PKG_DEPENDS_HOST="ccache:host rsync:host openssl:host"
 PKG_DEPENDS_TARGET="toolchain linux:host kmod:host xz:host keyutils aml-dtbtools:host aml-dtbtools ${KERNEL_EXTRA_DEPENDS_TARGET}"

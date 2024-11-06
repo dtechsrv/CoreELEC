@@ -2,8 +2,8 @@
 # Copyright (C) 2018-present Team CoreELEC (https://coreelec.org)
 
 PKG_NAME="media_modules-aml"
-PKG_VERSION="dcc04af09b70264bd97639251c4e304dee8949a4"
-PKG_SHA256="865d64e98fc91dc96988cd120fbc661fb3803f73246d6b1fbeb36b484be818e9"
+PKG_VERSION="c66fbd21d49c71a30e633af6ff5eb55a50338978"
+PKG_SHA256="2ec8f566da02ea25da86d19c000097049c1a815a85cb9e3fec01dc89cc996592"
 PKG_LICENSE="GPL"
 PKG_SITE="https://coreelec.org"
 PKG_URL="https://github.com/CoreELEC/media_modules-aml/archive/${PKG_VERSION}.tar.gz"
@@ -18,6 +18,7 @@ pre_make_target() {
 
 make_target() {
   kernel_make -C $(kernel_path) M=${PKG_BUILD}/drivers \
+    EXTRA_CFLAGS="-DLIMIT_DECODE_INSTANCE=1" \
     CONFIG_AMLOGIC_MEDIA_VDEC_MPEG12=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_MPEG2_MULTI=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_MPEG4=m \
@@ -27,6 +28,7 @@ make_target() {
     CONFIG_AMLOGIC_MEDIA_VDEC_H264_MULTI=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_H264_MVC=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_H265=m \
+    CONFIG_AMLOGIC_MEDIA_VDEC_H266=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_VP9=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_MJPEG=m \
     CONFIG_AMLOGIC_MEDIA_VDEC_MJPEG_MULTI=m \
