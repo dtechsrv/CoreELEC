@@ -1,4 +1,4 @@
-From 414c3558c6962b351c804d5c0ca8c3d97f13aac6 Mon Sep 17 00:00:00 2001
+From 0a9e5ac36e76fc396cfa33257272533103759de4 Mon Sep 17 00:00:00 2001
 From: Portisch <hugo.portisch@yahoo.de>
 Date: Tue, 5 Dec 2023 08:56:05 +0100
 Subject: [PATCH] skin.estuary: change default color to 'cinema'
@@ -11,7 +11,7 @@ Subject: [PATCH] skin.estuary: change default color to 'cinema'
 
 diff --git a/addons/skin.estuary/colors/cinema.xml b/addons/skin.estuary/colors/cinema.xml
 new file mode 100644
-index 0000000000..7a349aef30
+index 0000000000..7af1752470
 --- /dev/null
 +++ b/addons/skin.estuary/colors/cinema.xml
 @@ -0,0 +1,9 @@
@@ -19,13 +19,13 @@ index 0000000000..7a349aef30
 +<colors>
 +	<color name="primary_background">FF666666</color>
 +	<color name="secondary_background">33DA845C</color>
-+	<color name="dialog_tint">FF242728</color>
++	<color name="dialog_tint">FF940606</color>
 +	<color name="button_focus">FF9E040D</color>
 +	<color name="button_alt_focus">809E040D</color>
 +	<color name="selected">FFF70C1A</color>
 +</colors>
 diff --git a/addons/skin.estuary/colors/defaults.xml b/addons/skin.estuary/colors/defaults.xml
-index e92559884b..3623ac0950 100644
+index e92559884b..3d5263f5d5 100644
 --- a/addons/skin.estuary/colors/defaults.xml
 +++ b/addons/skin.estuary/colors/defaults.xml
 @@ -1,9 +1,9 @@
@@ -38,7 +38,7 @@ index e92559884b..3623ac0950 100644
 +	<color name="primary_background">FF666666</color>
 +	<color name="secondary_background">33DA845C</color>
 +	<color name="dialog_tint">FF242728</color>
-+	<color name="dialog_header_tint">809E040D</color>
++	<color name="dialog_header_tint">FF940606</color>
  	<color name="background">FF000000</color>
  	<color name="bg_image">FF909090</color>
  	<color name="bg_overlay">30FFFFFF</color>
