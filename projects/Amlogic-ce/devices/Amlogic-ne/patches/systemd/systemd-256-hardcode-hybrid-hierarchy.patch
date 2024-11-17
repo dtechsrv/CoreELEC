@@ -9,47 +9,47 @@ diff --git a/src/shared/cgroup-setup.c b/src/shared/cgroup-setup.c
 index 093b6d0..aeb0de4 100644
 --- a/src/shared/cgroup-setup.c
 +++ b/src/shared/cgroup-setup.c
-@@ -80,7 +80,7 @@ static int cg_any_controller_used_for_v1(void) {
- }
- 
- bool cg_is_unified_wanted(void) {
--        static thread_local int wanted = -1;
-+        static thread_local int wanted = 0;  /* systemd.unified_cgroup_hierarchy=0 */
+@@ -83,6 +83,8 @@ bool cg_is_unified_wanted(void) {
+         static thread_local int wanted = -1;
          int r;
  
++        return false;
++
          /* If we have a cached value, return that. */
-@@ -110,7 +110,7 @@ bool cg_is_unified_wanted(void) {
+         if (wanted >= 0)
+                 return wanted;
+@@ -117,6 +119,8 @@ bool cg_is_unified_wanted(void) {
  }
  
  bool cg_is_legacy_wanted(void) {
--        static thread_local int wanted = -1;
-+        static thread_local int wanted = 1;
- 
-         /* If we have a cached value, return that. */
-         if (wanted >= 0)
-@@ -126,7 +126,7 @@ bool cg_is_legacy_wanted(void) {
- }
- 
- bool cg_is_hybrid_wanted(void) {
--        static thread_local int wanted = -1;
-+        static thread_local int wanted = 1;  /* systemd.legacy_systemd_cgroup_controller=0 */
++        return true;
++
+         /* Check if we have cgroup v2 already mounted. */
+         if (cg_unified_cached(true) == CGROUP_UNIFIED_ALL)
+                 return false;
+@@ -130,6 +134,8 @@ bool cg_is_hybrid_wanted(void) {
+         static thread_local int wanted = -1;
          int r;
  
++        return true;
++
          /* If we have a cached value, return that. */
-@@ -153,6 +153,8 @@ bool cg_is_hybrid_wanted(void) {
+         if (wanted >= 0)
+                 return wanted;
+@@ -165,6 +171,7 @@ bool cg_is_legacy_force_enabled(void) {
+         bool b;
  
- bool cg_is_legacy_force_enabled(void) {
-         bool force;
-+        
+         /* Require both systemd.unified_cgroup_hierarchy=0 and SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1. */
 +        return true;  /* SYSTEMD_CGROUP_ENABLE_LEGACY_FORCE=1 */
  
-         if (!cg_is_legacy_wanted())
+         if (!cg_is_legacy_enabled())
                  return false;
+
 diff --git a/src/shared/mount-setup.c b/src/shared/mount-setup.c
 index ba291bd..724db2c 100644
 --- a/src/shared/mount-setup.c
 +++ b/src/shared/mount-setup.c
-@@ -592,5 +592,5 @@ int mount_cgroup_legacy_controllers(bool loaded_policy) {
+@@ -608,5 +608,5 @@ int mount_cgroup_legacy_controllers(bool loaded_policy) {
                                MS_REMOUNT|MS_NOSUID|MS_NOEXEC|MS_NODEV|MS_STRICTATIME|MS_RDONLY,
                                "mode=0755" TMPFS_LIMITS_SYS_FS_CGROUP);
  
@@ -60,7 +60,7 @@ diff --git a/meson.build b/meson.build
 index 34f1148..e17a7e6 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -623,16 +623,8 @@ foreach ident : [
+@@ -634,16 +634,8 @@ foreach ident : [
                                   #include <unistd.h>'''],
          ['get_mempolicy',     '''#include <stdlib.h>
                                   #include <unistd.h>'''],
@@ -79,7 +79,7 @@ index 34f1148..e17a7e6 100644
          ['rt_sigqueueinfo',   '''#include <stdlib.h>
                                   #include <unistd.h>
                                   #include <signal.h>
-@@ -653,7 +645,7 @@ foreach ident : [
+@@ -664,7 +664,7 @@ foreach ident : [
          ['fsconfig',          '''#include <sys/mount.h>'''],
          ['fsmount',           '''#include <sys/mount.h>'''],
          ['getdents64',        '''#include <dirent.h>'''],
