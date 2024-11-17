@@ -2,8 +2,8 @@
 # Copyright (C) 2024-present Team CoreELEC (https://coreelec.org)
 
 PKG_NAME="common_drivers"
-PKG_VERSION="bfef9c9fb366943e3cc6c6dd68b068936f9784cc"
-PKG_SHA256="334b476277b5fccb089e940be81d09fb431e3834b3a8dfa81cff934a484cc27f"
+PKG_VERSION="d032fc3a9c228e7fb3d822acac2aa05eeef8f033"
+PKG_SHA256="440d90d75ecfb4d17d3e6bb3bce96b61f7f78835c2db675e52b37df8c8b7b993"
 PKG_LICENSE="GPL-2.0+ OR MIT"
 PKG_SITE="https://coreelec.org"
 PKG_URL="https://github.com/CoreELEC/common_drivers/archive/${PKG_VERSION}.tar.gz"
