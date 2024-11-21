@@ -84,6 +84,9 @@
   # include uvesafb support (yes / no)
     UVESAFB_SUPPORT="no"
 
+  # build and install NTFS-3G fuse support (yes / no)
+    NTFS3G="yes"
+
   # Displayserver to use (x11 / no)
     DISPLAYSERVER="no"
 
