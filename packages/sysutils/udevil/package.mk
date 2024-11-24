@@ -24,6 +24,9 @@ makeinstall_target() {
 post_makeinstall_target() {
   mkdir -p ${INSTALL}/etc/udevil
     cp ${PKG_DIR}/config/udevil.conf ${INSTALL}/etc/udevil
+    if [ "${DEVICE}" == "Amlogic-ne" ]; then
+      sed -i "s|\(^default_options_ntfs.*\)|\1, big_writes, utf8|" ${INSTALL}/etc/udevil/udevil.conf
+    fi
     ln -sf /storage/.config/udevil.conf ${INSTALL}/etc/udevil/udevil-user-root.conf
 
   mkdir -p ${INSTALL}/usr/bin
