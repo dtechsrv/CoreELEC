@@ -37,7 +37,7 @@ insmod_dovi() {
 
   modinfo ${DOVI_KO_ANDROID}
 
-  if check_dovi_version ${DOVI_KO_ANDROID} 5 15 78; then
+  if check_dovi_version ${DOVI_KO_ANDROID} 5 15 137; then
     message "loading dovi module from android partition"
     insmod ${DOVI_KO_ANDROID}
   else
@@ -46,7 +46,7 @@ insmod_dovi() {
 [B][COLOR red]Android Dolby Vision kernel module is not compatible[/COLOR][/B]
 [COLOR red]No Dolby Vision media playback possible![/COLOR]
 
-Please upgrade Android firmware of your device to minimum Linux kernel version '5.15.78'.
+Please upgrade Android firmware of your device to minimum Linux kernel version '5.15.137'.
 Dolby Vision media will be displayed in HDR instead Dolby Vision until the firmware fulfill the minimum requirements.
 EOF
   fi
