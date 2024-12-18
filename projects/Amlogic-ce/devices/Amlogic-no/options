@@ -111,7 +111,7 @@
   # for a list of additinoal drivers see packages/linux-drivers
   # Space separated list is supported,
   # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
-  ADDITIONAL_DRIVERS+=" RTL8189FS"
+  # ADDITIONAL_DRIVERS+=""
 
   # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
   # Space separated list is supported,
@@ -141,7 +141,7 @@
   # additional packages to install:
   # Space separated list is supported,
   # e.g. ADDITIONAL_PACKAGES="PACKAGE1 PACKAGE2"
-    ADDITIONAL_PACKAGES+=" tmate parse-android-dynparts"
+  # ADDITIONAL_PACKAGES+=""
 
   # add OOTB support for IR remote
   # IR_REMOTE_KEYMAPS+=""
@@ -154,4 +154,4 @@
     SUBDEVICES="Khadas_VIM4 Khadas_VIM1S Odroid_C4 Odroid_N2 Radxa_Zero Radxa_Zero2 Alta Solitude"
 
   # TEE supported SoC
-    TEE_SOC="A311D2 S905W2 S905X4 S905Y4"
+    TEE_SOC="S928X A311D2 S905W2 S905X4 S905Y4"

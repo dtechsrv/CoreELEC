@@ -384,8 +384,6 @@ devices = \
     },
   },
   'Amlogic-ce': {
-    'Amlogic-ne': {
-    },
     'Amlogic-no': {
     },
   },

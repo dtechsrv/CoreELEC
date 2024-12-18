@@ -281,7 +281,7 @@ function migrate_dtb_to_xml() {
             esac
             ;;
           wol)
-            if check_linux_version 5 4 210; then
+            if check_linux_version 5 15 137; then
               wol="$( cat /flash/config.ini | awk -F "=" '/^wol=/{gsub(/"|\047/,"",$2); print $2}')"
               log " migrate WOL setting ($wol) from config.ini"
               if [ "$wol" == "1" ]; then

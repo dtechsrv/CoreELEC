@@ -58,7 +58,7 @@
 # Space separated list is supported,
 # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
   ADDITIONAL_DRIVERS="gpu-aml openvfd-driver media_modules-aml wifi_dummy-aml ap6xxx-aml
-                      aic8800-sdio RTW88 RTL8852BE-aml RTL8723DS-aml
+                      aic8800-sdio RTW88 RTL8189FS RTL8852BE-aml RTL8723DS-aml
                       RTL8851BU RTL8852BS-aml mt7668-wifi-bt w1-aml"
 
 # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
@@ -270,4 +270,4 @@
 # Space separated list is supported,
 # e.g. ADDITIONAL_PACKAGES="PACKAGE1 PACKAGE2"
   ADDITIONAL_PACKAGES="u-boot-script dtc CoreELEC-Debug-Scripts inject_bl301 ceemmc
-                       nfs-utils dtb-xml megatools"
+                       nfs-utils dtb-xml megatools tmate parse-android-dynparts"
