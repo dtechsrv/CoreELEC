@@ -20,7 +20,7 @@ PKG_CONFIGURE_OPTS_TARGET="ac_cv_func_malloc_0_nonnull=yes \
 pre_configure_target() {
   # override mtp-hotplug with true as the built files are not used.
   # the generated udev files are deleted is the post_makeinstall_target.
-  export HOST_MTP_HOTPLUG="/usr/bin/true"
+  export HOST_MTP_HOTPLUG="true"
 }
 
 post_configure_target() {
